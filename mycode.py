@@ -23,17 +23,17 @@ cols.insert(width_index+1,"sepal ratio")
 
 df = df[cols]
 
+# Version 3
+# Petal ratio
+df["petal ratio"] = df["petal length (cm)"]/df["petal width (cm)"]
+
+cols  = list(df.columns)
+cols.remove("petal ratio")
+width_index = cols.index("petal width (cm)")
+cols.insert(width_index+1,"petal ratio")
+
+
 print(df.head())
-
-# # Version 3
-# # Petal ratio
-# df["petal ratio"] = df["petal length (cm)"]/df["petal width (cm)"]
-
-# cols  = list(df.columns)
-# cols.remove("petal ratio")
-# width_index = cols.index("petal width (cm)")
-# cols.insert(width_index+1,"petal ratio")
-
 # Add target column
 df["target"] = iris.target
 
